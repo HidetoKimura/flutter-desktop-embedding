@@ -24,6 +24,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 import 'package:window_size/window_size.dart' as window_size;
+import 'package:mapbox_ivi/mapbox_ivi.dart';
 
 import 'keyboard_test_page.dart';
 
@@ -249,7 +250,7 @@ class _MyHomePage extends StatelessWidget {
                     ),
                     TextInputTestWidget(),
                     FileChooserTestWidget(),
-                    URLLauncherTestWidget(),
+                    MapboxTestWidget(),
                     new RaisedButton(
                       child: new Text('Test raw keyboard events'),
                       onPressed: () {
@@ -356,18 +357,16 @@ class FileChooserTestWidget extends StatelessWidget {
 }
 
 /// A widget containing controls to test the url launcher plugin.
-class URLLauncherTestWidget extends StatelessWidget {
+class MapboxTestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonBar(
       alignment: MainAxisAlignment.center,
       children: <Widget>[
         new FlatButton(
-          child: const Text('OPEN ON GITHUB'),
-          onPressed: () async {
-            final result = await url_launcher
-                .launch('https://github.com/google/flutter-desktop-embedding');
-            assert(result);
+          child: const Text('START NAVIGATION'),
+          onPressed: () {
+            final result = SetCurrentLocation();
           },
         ),
       ],

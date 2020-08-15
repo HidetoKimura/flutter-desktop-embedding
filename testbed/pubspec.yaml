@@ -33,6 +33,8 @@ dependencies:
   url_launcher: ^5.5.0
   url_launcher_fde:
     path: ../plugins/flutter_plugins/url_launcher_fde
+  mapbox_ivi:
+    path: ../plugins/mapbox_ivi
 
 dev_dependencies:
   flutter_test:
